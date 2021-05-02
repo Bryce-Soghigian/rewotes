@@ -3,7 +3,10 @@ import { DispatchContext } from "./components/contexts/DispatchContext";
 import { StateContext } from "./components/contexts/StateContext";
 import Router from "./components/Router";
 import { reducer, initialState } from "./reducer";
-
+/**
+ * App.js
+ * @returns
+ */
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
