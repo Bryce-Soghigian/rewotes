@@ -1,23 +1,21 @@
-import React, { useReducer } from "react";
-import { DispatchContext } from "./components/contexts/DispatchContext";
-import { StateContext } from "./components/contexts/StateContext";
+import React, { useReducer, useMemo } from "react";
+import { GlobalContext } from "./components/contexts/GlobalContext";
 import Router from "./components/Router";
 import { reducer, initialState } from "./reducer";
+import "./App.css";
 /**
  * App.js
  * @returns
  */
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
-
+  // const contextValue = useMemo(() => ({ state, dispatch }), [state, dispatch]);
   return (
-    <DispatchContext.Provider value={{ dispatch }}>
-      <StateContext.Provider value={{ state }}>
-        <div>
-          <Router />
-        </div>
-      </StateContext.Provider>
-    </DispatchContext.Provider>
+    <GlobalContext.Provider value={{ state, dispatch }}>
+      <div>
+        <Router />
+      </div>
+    </GlobalContext.Provider>
   );
 }
 

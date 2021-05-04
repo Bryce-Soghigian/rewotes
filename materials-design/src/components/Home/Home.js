@@ -1,4 +1,7 @@
 import React from "react";
+import Nav from "../Nav";
+import ImportModal from "./ImportModal/ImportModal";
+import Materials from "./Materials";
 
 /**
  * Home
@@ -6,5 +9,11 @@ import React from "react";
  * @returns
  */
 export default function Home() {
-  return <div>hi</div>;
+  return (
+    <div>
+      <Nav />
+      <ImportModal />
+      <Materials />
+    </div>
+  );
 }
