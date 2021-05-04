@@ -72,3 +72,9 @@ border-bottom: solid gainsboro 1px;
     color:white;
     background: none;
 }
+
+
+#canvas-container{
+    width: 80vw;
+    height:75vh;
+}

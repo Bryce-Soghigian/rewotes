@@ -1,4 +1,5 @@
 import React from "react";
+import MaterialViewer from "../MaterialViewer";
 import Nav from "../Nav";
 import ImportModal from "./ImportModal/ImportModal";
 import Materials from "./Materials";
@@ -13,7 +14,10 @@ export default function Home() {
     <div>
       <Nav />
       <ImportModal />
-      <Materials />
+      <div className="start">
+        <Materials />
+        <MaterialViewer />
+      </div>
     </div>
   );
 }

@@ -1,19 +1,19 @@
 export const initialState = {
   showImportModal: false,
-  materials:[],
-  currentAtom:null
+  materials: [],
+  currentAtom: null,
 };
 export const reducer = (state, action) => {
   console.log(state);
   switch (action.type) {
     case "importFile":
-      let materials = state.materials
-      materials.push(action.payload)
+      const materials = state.materials;
+      materials.push(action.payload);
       return {
         ...state,
-        materials:materials,
-        showImportModal: !state.showImportModal
-      }
+        materials: materials,
+        showImportModal: !state.showImportModal,
+      };
 
     case "showImportModal":
       return {
