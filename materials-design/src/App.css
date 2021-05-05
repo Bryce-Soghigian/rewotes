@@ -35,7 +35,8 @@ border-bottom: solid gainsboro 1px;
 .material{
     border-bottom:1px solid gainsboro;
 }
-.modal{
+#modal{
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;

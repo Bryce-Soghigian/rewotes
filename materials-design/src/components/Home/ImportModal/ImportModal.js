@@ -7,6 +7,7 @@ export default function ImportModal() {
   const [fileState, setFileState] = useState(null);
   const handleFileChange = (e) => {
     const file = e.target.files[0];
+    console.log(file);
     setFileState(file);
   };
   const submitMaterial = () => {
@@ -37,7 +38,7 @@ export default function ImportModal() {
 
   if (state.showImportModal === true) {
     return (
-      <div className="modal">
+      <div id="modal">
         <p className="error">{errorState}</p>
         <input
           className="input-file"
