@@ -1,7 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import propTypes from "prop-types";
-import { GlobalContext } from "./contexts/GlobalContext";
 const AnimateFrame = (props) => {
   useFrame(({ clock }) => {
     props.meshRef.current.rotation.x += 0.31;
@@ -15,23 +14,21 @@ AnimateFrame.propTypes = {
   ]),
 };
 
-export default function MaterialViewer() {
-  const { state } = useContext(GlobalContext);
+export default function MaterialViewer(props) {
   const myMesh = React.useRef();
 
   return (
     <div id="canvas-container">
       <Canvas>
-        {state.currentStructure.atoms.map((atom) => {
-          console.log(atom, "atom pog");
+        {props.atoms.map((atom) => {
           return (
             <mesh
-              key={atom.element}
+              key={atom.index}
               ref={myMesh}
               position={[atom.x, atom.y, atom.z]}
             >
               <sphereGeometry
-                args={[state.currentStructure.crystalScale, 32, 32]}
+                args={[props.crystalScale, 32, 32]}
               />
               <meshBasicMaterial color="hotpink" />
             </mesh>

@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer,useMemo } from "react";
 import { GlobalContext } from "./components/contexts/GlobalContext";
 import Router from "./components/Router";
 import { reducer, initialState } from "./reducer";
