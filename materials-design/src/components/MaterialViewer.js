@@ -14,16 +14,26 @@ AnimateFrame.propTypes = {
   ]),
 };
 
-export default function MaterialViewer() {
+export default function MaterialViewer(props) {
   const myMesh = React.useRef();
+
   return (
     <div id="canvas-container">
       <Canvas>
-        <mesh ref={myMesh}>
-          <boxGeometry />
-          <meshBasicMaterial color={"#ff0000"} />
-        </mesh>
-        <AnimateFrame meshRef={myMesh} />
+        {props.atoms.map((atom) => {
+          return (
+            <mesh
+              key={atom.index}
+              ref={myMesh}
+              position={[atom.x, atom.y, atom.z]}
+            >
+              <sphereGeometry
+                args={[props.crystalScale, 32, 32]}
+              />
+              <meshBasicMaterial color="hotpink" />
+            </mesh>
+          );
+        })}
       </Canvas>
     </div>
   );

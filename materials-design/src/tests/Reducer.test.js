@@ -7,7 +7,8 @@ describe("Test Suite For Root Reducer", () => {
     expect(initialState).to.have.all.keys(
       "showImportModal",
       "materials",
-      "currentAtom"
+      "currentAtom",
+      "currentStructure"
     );
   });
 });
